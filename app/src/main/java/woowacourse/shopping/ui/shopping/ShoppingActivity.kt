@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import woowacourse.shopping.ui.cart.CartActivity
 import woowacourse.shopping.ui.productdetail.ProductDetailActivity
+import woowacourse.shopping.ui.study.StudyActivity
 import woowacourse.shopping.ui.theme.ShoppingTheme
 
 class ShoppingActivity : ComponentActivity() {
@@ -33,7 +34,7 @@ class ShoppingActivity : ComponentActivity() {
                         isLoading = uiState.isLoading,
                         modifier = Modifier.padding(innerPadding),
                         onCartClick = {
-                            startActivity(Intent(this, CartActivity::class.java))
+                            startActivity(Intent(this, StudyActivity::class.java))
                         },
                         onProductClick = {
                             val intent =
