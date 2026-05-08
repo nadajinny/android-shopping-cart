@@ -27,12 +27,12 @@ import woowacourse.shopping.repository.inmemory.InMemoryProductRepository
 import woowacourse.shopping.ui.ShoppingTypography
 import woowacourse.shopping.ui.common.component.AddToCartButton
 import woowacourse.shopping.ui.common.component.QuantityStepper
-import woowacourse.shopping.ui.shopping.ShoppingProductUiState
+import woowacourse.shopping.ui.shopping.ShoppingProductUiModel
 
 @SuppressLint("DefaultLocale")
 @Composable
 fun ProductUnit(
-    product: ShoppingProductUiState,
+    product: ShoppingProductUiModel,
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     onAddToCart: () -> Unit,
@@ -98,7 +98,7 @@ fun ProductUnit(
 @Preview(showBackground = true, name = "장바구니 담기 버튼")
 private fun ProductUnitAddToCartPreview() {
     ProductUnit(
-        product = ShoppingProductUiState(product = InMemoryProductRepository.APPLE, quantity = 0),
+        product = ShoppingProductUiModel(product = InMemoryProductRepository.APPLE, quantity = 0),
         onClick = {},
         onAddToCart = {},
         onIncreaseQuantity = {},
@@ -110,7 +110,7 @@ private fun ProductUnitAddToCartPreview() {
 @Preview(showBackground = true, name = "수량 스테퍼")
 private fun ProductUnitQuantityPreview() {
     ProductUnit(
-        product = ShoppingProductUiState(product = InMemoryProductRepository.APPLE, quantity = 2),
+        product = ShoppingProductUiModel(product = InMemoryProductRepository.APPLE, quantity = 2),
         onClick = {},
         onAddToCart = {},
         onIncreaseQuantity = {},
@@ -123,7 +123,7 @@ private fun ProductUnitQuantityPreview() {
 private fun ProductUnitLongNamePreview() {
     ProductUnit(
         product =
-            ShoppingProductUiState(
+            ShoppingProductUiModel(
                 product =
                     Product(
                         name = "정말정말 엄청나게 긴 이름을 가지고 있는 상품",

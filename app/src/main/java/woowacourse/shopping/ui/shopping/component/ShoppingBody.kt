@@ -16,11 +16,11 @@ import androidx.compose.ui.unit.dp
 import woowacourse.shopping.model.Product
 import woowacourse.shopping.model.ProductId
 import woowacourse.shopping.repository.inmemory.InMemoryProductRepository
-import woowacourse.shopping.ui.shopping.ShoppingProductUiState
+import woowacourse.shopping.ui.shopping.ShoppingProductUiModel
 
 @Composable
 fun ShoppingBody(
-    products: List<ShoppingProductUiState>,
+    products: List<ShoppingProductUiModel>,
     showMoreButton: Boolean,
     isLoading: Boolean,
     modifier: Modifier = Modifier,
@@ -73,7 +73,7 @@ private fun ShoppingBodyPreview() {
     ShoppingBody(
         products =
             InMemoryProductRepository.products.toList().take(4).mapIndexed { index, product ->
-                ShoppingProductUiState(
+                ShoppingProductUiModel(
                     product = product,
                     quantity = if (index % 2 == 0) 0 else 2,
                 )

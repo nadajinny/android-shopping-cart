@@ -52,7 +52,7 @@ class ShoppingViewModel(
         val quantityByProductId = visibleCartItems.associate { it.productId to it.quantity }
 
         val products = visibleProducts.map { product ->
-            ShoppingProductUiState(
+            ShoppingProductUiModel(
                 product = product,
                 quantity = quantityByProductId[product.id] ?: 0,
             )
